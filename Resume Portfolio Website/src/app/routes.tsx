@@ -61,7 +61,7 @@ function Nav() {
           to="/"
           className="font-['Instrument_Serif'] font-normal text-[1.05rem] text-foreground hover:text-primary transition-colors duration-300"
         >
-          Alex Chen
+          Nicki Wahlers
         </NavLink>
         <div className="flex items-center gap-8 sm:gap-10">
           {[
@@ -83,7 +83,7 @@ function Nav() {
             </NavLink>
           ))}
           <a
-            href="mailto:alex@alexchen.dev"
+            href="mailto:nicki.wahlers@gmail.com"
             className="font-['Geist'] text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 hidden sm:block"
           >
             Contact
@@ -101,14 +101,25 @@ function Footer() {
     <footer className="border-t border-border py-12 mt-28">
       <div className="max-w-screen-xl mx-auto px-8 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-5">
         <p className="font-['Geist'] text-xs text-muted-foreground tracking-wide font-light">
-          © 2025 Alex Chen
+          © 2026 Nicki Wahlers
         </p>
         <div className="flex items-center gap-6">
           {[
-            { href: "https://github.com", icon: Github, label: "GitHub" },
-            { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-            { href: "https://twitter.com", icon: Twitter, label: "Twitter" },
-            { href: "mailto:alex@alexchen.dev", icon: Mail, label: "Email" },
+            {
+              href: "https://github.com/nickiwahlers111",
+              icon: Github,
+              label: "GitHub",
+            },
+            {
+              href: "https://www.linkedin.com/in/nicki-wahlers/",
+              icon: Linkedin,
+              label: "LinkedIn",
+            },
+            {
+              href: "mailto:nicki.wahlers@gmail.com",
+              icon: Mail,
+              label: "Email",
+            },
           ].map(({ href, icon: Icon, label }) => (
             <a
               key={label}
@@ -148,7 +159,7 @@ function Home() {
         <div className="flex flex-col justify-end px-8 lg:px-16 pb-16 lg:pb-24 pt-32 lg:pt-0">
           <Reveal delay={0.1}>
             <p className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-primary mb-10">
-              Senior Engineer · San Francisco
+              Director of Technology · Portland, OR
             </p>
           </Reveal>
 
@@ -164,8 +175,9 @@ function Home() {
                 className="font-['Geist'] font-light text-foreground leading-[1.65] mt-4"
                 style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}
               >
-                I lead technology and product initiatives
-                <br className="hidden lg:block" /> that help organizations solve real-world problems.
+                I guide products from concept to launch
+                <br className="hidden lg:block" /> by aligning people and
+                strategy with technology.
               </p>
             </div>
           </Reveal>
@@ -176,8 +188,9 @@ function Home() {
 
           <Reveal delay={0.45}>
             <p className="font-['Geist'] font-light text-[0.95rem] text-muted-foreground leading-[1.85] max-w-[26rem] mb-11">
-              Seven years across Vercel, Stripe, and Airbnb — finding
-              the quiet clarity in complex systems.
+              Driven by curiosity and collaboration, I enjoy bringing together
+              users and technical teams to create products that make a
+              difference.
             </p>
           </Reveal>
 
@@ -369,39 +382,63 @@ function Home() {
 
 const experience = [
   {
-    company: "Vercel",
-    role: "Senior Software Engineer",
-    period: "Jan 2022 — Present",
-    location: "San Francisco, CA",
+    company: "Crime Stoppers of Houston",
+    role: "Director of Technology",
+    period: "Apr 2026 — Present",
+    location: "Houston, TX",
     bullets: [
-      "Led infrastructure redesign for the edge deployment pipeline, reducing cold start times by 40% across 150+ regions worldwide.",
-      "Architected real-time collaboration features — presence, cursors, shared state — now serving 200,000+ daily active users.",
-      "Shipped preview deployment environments, the third most-requested product feature of 2023.",
-      "Mentored four junior engineers; ran weekly internal TypeScript workshops.",
+      "Set technical strategy and organizational vision for multi-program initiatives, aligning technical priorities with organizational goals and leading cross-functional teams to deliver scalable systems and digital products that strengthen data infrastructure and platform capabilities. ",
+      "Directed technology operations across multiple organizational programs, balancing stakeholder priorities, defining KPIs, managing delivery timelines, and driving continuous process improvements.",
     ],
   },
   {
-    company: "Stripe",
-    role: "Software Engineer",
-    period: "Jun 2020 — Dec 2021",
-    location: "San Francisco, CA",
+    role: "Technical Program Manager - All Programs",
+    period: "Nov 2025 – Apr 2026",
+    location: "Houston, TX",
     bullets: [
-      "Worked on the core payments API processing over $1B in daily transactions, maintaining a 99.999% uptime SLA.",
-      "Led migration of legacy PHP billing service to Go microservices, reducing p99 latency by 60%.",
-      "Built an internal fraud detection pipeline combining heuristic scoring with ML model inference.",
-      "Co-authored Stripe's zero-downtime deployment runbook, adopted across 12 teams.",
+      "Led technology initiatives across 8+ product lines, defining roadmaps, prioritizing delivery, and implementing scalable systems that supported a 15x increase in organizational capacity and user demand.",
+      "Owned end-to-end program execution including requirements gathering, roadmap planning, prioritization, and bi-monthly release cycles, delivering dashboards, data tools, and digital resources across multiple concurrent initiatives, aligning technical delivery with organizational priorities.",
+      "Directed development and launch of a student-centered digital platform, achieving 10x projected engagement and driving 26K users and 104K interactions in the first month.",
+      "Translated legislative and policy requirements into technical deliverables, enabling data-driven decision-making for Texas state leadership during the 2025 legislative session.",
     ],
   },
   {
-    company: "Airbnb",
-    role: "Software Engineer",
-    period: "Aug 2019 — May 2020",
-    location: "San Francisco, CA",
+    role: "Technical Program Manager - The Glenda Gordy Research Center",
+    period: "Feb 2025 - Nov 2025",
+    location: "Houston, TX",
     bullets: [
-      "Improved search ranking and relevance algorithms, contributing to an 8% lift in booking conversion.",
-      "Rewrote the geospatial indexing layer in Rust, cutting memory usage by 35% under peak traffic.",
-      "Integrated real-time pricing signals from third-party data providers into the search ranking model.",
+      "Owned technical strategy and end-to-end program execution of the Glenda Gordy Research Center, building scalable data infrastructure and products that expanded access to public safety data.",
+      "Facilitated Agile sprint planning, backlog refinement and prioritization with engineering and non technical teams to align product delivery with organizational goals. ",
     ],
+  },
+  {
+    role: "Data Analyst - The Glenda Gordy Research Center",
+    period: "June 2024 - Feb 2025",
+    location: "Houston, TX",
+    bullets: [
+      "Designed and delivered interactive dashboards and data products, translating complex datasets into scalable reporting solutions that informed community stakeholders and legislative decisions.",
+    ],
+  },
+  {
+    company: "Airship",
+    role: "Data Engineering Intern",
+    period: "Jan 2022 - Jun 2022",
+    location: "Portland, OR",
+    bullets: [],
+  },
+  {
+    company: "Nike",
+    role: "Data Project Manager",
+    period: "Mar 2020 - May 2022",
+    location: "Beaverton, OR",
+    bullets: [],
+  },
+  {
+    company: "Act-On Software",
+    role: "Software Engineering Intern",
+    period: "Jun 2021 - Dec 2021",
+    location: "Portland, OR",
+    bullets: [],
   },
 ];
 
@@ -415,7 +452,6 @@ const skills: Record<string, string[]> = {
 function Resume() {
   return (
     <main className="max-w-screen-xl mx-auto px-8 lg:px-16 pt-32 pb-20">
-
       {/* Header */}
       <Reveal>
         <div className="mb-14 pb-10 border-b border-border">
@@ -428,28 +464,38 @@ function Resume() {
                 className="font-['Instrument_Serif'] font-normal text-foreground leading-[1.1]"
                 style={{ fontSize: "clamp(2.8rem, 6vw, 5rem)" }}
               >
-                Nicki
+                Nicki Wahlers
               </h1>
               <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-3 flex items-center gap-2">
                 <MapPin size={12} strokeWidth={1.5} />
-                Technology &amp; Product Leader · San Francisco, CA
+                Technology &amp; Product Leader · Portland, OR -&gt; Los
+                Angeles, CA
               </p>
             </div>
             <div className="flex items-center gap-6 self-start sm:self-auto">
               {[
-                { href: "https://github.com", icon: Github },
-                { href: "https://linkedin.com", icon: Linkedin },
-                { href: "mailto:alex@alexchen.dev", icon: Mail },
+                {
+                  href: "https://linkedin.com/in/nicki-wahlers/",
+                  icon: Linkedin,
+                },
+                { href: "mailto:nicki.wahlers@gmail.com", icon: Mail },
+                //TODO: change the mailto
               ].map(({ href, icon: Icon }) => (
-                <a key={href} href={href} className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                <a
+                  key={href}
+                  href={href}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
                   <Icon size={15} strokeWidth={1.5} />
                 </a>
               ))}
               <a
-                href="#"
+                href="/Nicki_Wahlers_Resume.pdf"
+                download="Nicki_Wahlers_Resume.pdf"
                 className="inline-flex items-center gap-2 font-['Geist'] text-xs tracking-[0.12em] uppercase text-muted-foreground border-b border-border pb-px hover:text-foreground hover:border-foreground transition-colors duration-300 ml-2"
               >
-                <Download size={12} strokeWidth={1.5} /> PDF
+                <Download size={12} strokeWidth={1.5} />
+                PDF
               </a>
             </div>
           </div>
@@ -458,7 +504,6 @@ function Resume() {
 
       {/* Two-column body */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_15rem] gap-16 lg:gap-20">
-
         {/* Experience */}
         <div>
           <Reveal>
@@ -467,40 +512,49 @@ function Resume() {
             </p>
           </Reveal>
           <div className="space-y-12">
-            {experience.map(({ company, role, period, location, bullets }, i) => (
-              <Reveal key={company} delay={i * 0.05}>
-                <div className="border-t border-border pt-8">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-4">
-                    <div>
-                      <p className="font-['Instrument_Serif'] font-normal text-xl text-foreground leading-tight">
-                        {company}
-                      </p>
-                      <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-0.5">
-                        {role}
-                      </p>
+            {experience.map(
+              ({ company, role, period, location, bullets }, i) => (
+                <Reveal key={company} delay={i * 0.05}>
+                  <div className="border-t border-border pt-8">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-4">
+                      <div>
+                        <p className="font-['Instrument_Serif'] font-normal text-xl text-foreground leading-tight">
+                          {company}
+                        </p>
+                        <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-0.5">
+                          {role}
+                        </p>
+                      </div>
+                      <div className="text-left sm:text-right flex-shrink-0">
+                        <p className="font-['Geist'] font-light text-xs text-muted-foreground">
+                          {period}
+                        </p>
+                        <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-0.5">
+                          {location}
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-left sm:text-right flex-shrink-0">
-                      <p className="font-['Geist'] font-light text-xs text-muted-foreground">{period}</p>
-                      <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-0.5">{location}</p>
-                    </div>
+                    <ul className="space-y-2.5 mt-4">
+                      {bullets.map((b, j) => (
+                        <li key={j} className="flex gap-3">
+                          <span className="text-primary mt-[0.4rem] flex-shrink-0 text-[0.4rem]">
+                            ●
+                          </span>
+                          <p className="font-['Geist'] font-light text-sm text-muted-foreground leading-[1.85]">
+                            {b}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-2.5 mt-4">
-                    {bullets.map((b, j) => (
-                      <li key={j} className="flex gap-3">
-                        <span className="text-primary mt-[0.4rem] flex-shrink-0 text-[0.4rem]">●</span>
-                        <p className="font-['Geist'] font-light text-sm text-muted-foreground leading-[1.85]">{b}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              )
+            )}
           </div>
         </div>
 
         {/* Sidebar */}
         <div className="space-y-10 lg:pt-9">
-
           {/* Skills */}
           <Reveal delay={0.1}>
             <div>
@@ -552,11 +606,26 @@ function Resume() {
               </p>
               <div className="space-y-3">
                 {[
-                  { label: "Email", value: "nicki@nickidev.com", href: "mailto:nicki@nickidev.com" },
-                  { label: "GitHub", value: "github.com/nicki", href: "https://github.com" },
-                  { label: "LinkedIn", value: "/in/nicki", href: "https://linkedin.com" },
+                  {
+                    label: "Email",
+                    value: "nicki@nickidev.com",
+                    href: "mailto:nicki@nickidev.com",
+                  },
+                  {
+                    label: "GitHub",
+                    value: "github.com/nicki",
+                    href: "https://github.com",
+                  },
+                  {
+                    label: "LinkedIn",
+                    value: "/in/nicki",
+                    href: "https://linkedin.com",
+                  },
                 ].map(({ label, value, href }) => (
-                  <div key={label} className="flex justify-between items-baseline gap-4">
+                  <div
+                    key={label}
+                    className="flex justify-between items-baseline gap-4"
+                  >
                     <span className="font-['Geist'] text-xs font-light text-muted-foreground flex-shrink-0">
                       {label}
                     </span>
@@ -572,14 +641,12 @@ function Resume() {
             </div>
           </Reveal>
         </div>
-
       </div>
     </main>
   );
 }
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
-
 
 const projects = [
   {
