@@ -443,10 +443,53 @@ const experience = [
 ];
 
 const skills: Record<string, string[]> = {
-  Languages: ["TypeScript", "Go", "Rust", "Python", "SQL"],
-  Frontend: ["React", "Next.js", "Svelte", "Tailwind CSS"],
-  Backend: ["Node.js", "PostgreSQL", "Redis", "Kafka", "GraphQL"],
-  Infrastructure: ["AWS", "GCP", "Docker", "Kubernetes", "Terraform"],
+  "Program and Project Management": [
+    "Project Management",
+    "Software Development Lifecycle",
+    "Workplan Management",
+    "Budget Management",
+    "Agile & Waterfall Methodologies",
+    "Technical Roadmap Design",
+    "Project Planning",
+    "Product Roadmapping",
+    "Product Lifecycle Management",
+    "Requirements Gathering",
+    "Stakeholder Engagement",
+    "Cross-Functional Collaboration",
+    "Build & Release Coordination",
+    "Dependency Management",
+    "Risk Mitigation",
+    "Resource Allocation",
+    "Cross-Functional Leadership",
+  ],
+  "Systems, Data & Engineering Fundamentals ": [
+    "Data Infrastructure",
+    "Data Products",
+    "SQL",
+    "Data Analysis & Reporting",
+    "KPI Development",
+    "Data Visualization",
+    "Trend Analysis",
+    "System Reliability",
+    "CI/CD",
+    "Build Pipelines",
+    "Testing & Validation",
+    "Version Control (Git)",
+  ],
+  "Tools and Platforms": [
+    "Jira",
+    "Asana",
+    "Git",
+    "Github",
+    "AWS",
+    "Tableau",
+    "Google Analytics",
+    "Excel",
+    "Smartsheet",
+    "Figma",
+    "Canva",
+    "Microsoft Office Suite",
+  ],
 };
 
 function Resume() {
@@ -556,6 +599,36 @@ function Resume() {
         {/* Sidebar */}
         <div className="space-y-10 lg:pt-9">
           {/* Skills */}
+
+          <div className="h-px bg-border" />
+
+          {/* Education */}
+          <Reveal delay={0.12}>
+            <div>
+              <p className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-muted-foreground mb-5">
+                Education
+              </p>
+              <p className="font-['Instrument_Serif'] font-normal text-base text-foreground">
+                Portland State University
+              </p>
+              <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-0.5">
+                M.S. Computer Science
+              </p>
+              <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-1 flex items-center gap-1.5">
+                <Calendar size={11} strokeWidth={1.5} /> Class of 2023
+              </p>
+              <br></br>
+              <p className="font-['Instrument_Serif'] font-normal text-base text-foreground">
+                Gonzaga University
+              </p>
+              <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-0.5">
+                B.A. Mathematics and International Studies
+              </p>
+              <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-1 flex items-center gap-1.5">
+                <Calendar size={11} strokeWidth={1.5} /> Class of 2019
+              </p>
+            </div>
+          </Reveal>
           <Reveal delay={0.1}>
             <div>
               <p className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-muted-foreground mb-5">
@@ -575,27 +648,6 @@ function Resume() {
               </div>
             </div>
           </Reveal>
-
-          <div className="h-px bg-border" />
-
-          {/* Education */}
-          <Reveal delay={0.12}>
-            <div>
-              <p className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-muted-foreground mb-5">
-                Education
-              </p>
-              <p className="font-['Instrument_Serif'] font-normal text-base text-foreground">
-                UC Berkeley
-              </p>
-              <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-0.5">
-                B.S. Computer Science
-              </p>
-              <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-1 flex items-center gap-1.5">
-                <Calendar size={11} strokeWidth={1.5} /> Class of 2019 · 3.9 GPA
-              </p>
-            </div>
-          </Reveal>
-
           <div className="h-px bg-border" />
 
           {/* Contact */}
@@ -608,18 +660,13 @@ function Resume() {
                 {[
                   {
                     label: "Email",
-                    value: "nicki@nickidev.com",
-                    href: "mailto:nicki@nickidev.com",
-                  },
-                  {
-                    label: "GitHub",
-                    value: "github.com/nicki",
-                    href: "https://github.com",
+                    value: "nicki.wahlers@gmail.com",
+                    href: "mailto:nicki.wahlers@gmail.com",
                   },
                   {
                     label: "LinkedIn",
-                    value: "/in/nicki",
-                    href: "https://linkedin.com",
+                    value: "/in/nicki-wahlers",
+                    href: "https://linkedin.com/in/nicki-wahlers/",
                   },
                 ].map(({ label, value, href }) => (
                   <div
