@@ -778,8 +778,7 @@ function Projects() {
             projects
           </h1>
           <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-4 max-w-md leading-[1.8]">
-            Open source work, experiments, and side projects. All source on
-            GitHub.
+            FIXTHIS FIX THIS GitHub.
           </p>
         </div>
       </Reveal>
