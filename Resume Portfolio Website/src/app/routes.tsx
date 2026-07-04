@@ -106,11 +106,6 @@ function Footer() {
         <div className="flex items-center gap-6">
           {[
             {
-              href: "https://github.com/nickiwahlers111",
-              icon: Github,
-              label: "GitHub",
-            },
-            {
               href: "https://www.linkedin.com/in/nicki-wahlers/",
               icon: Linkedin,
               label: "LinkedIn",
