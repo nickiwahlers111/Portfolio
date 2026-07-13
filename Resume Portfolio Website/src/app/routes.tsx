@@ -70,7 +70,7 @@ function Nav() {
         </NavLink>
         <div className="flex items-center gap-8 sm:gap-10">
           {[
-            { to: "/resume", label: "Résumé" },
+            { to: "/resume", label: "Resume" },
             { to: "/projects", label: "Projects" },
           ].map(({ to, label }) => (
             <NavLink
@@ -453,7 +453,7 @@ function Resume() {
       <Reveal>
         <div className="mb-14 pb-10 border-b border-border">
           <p className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-muted-foreground mb-5">
-            Résumé
+            Resume
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
@@ -658,7 +658,7 @@ type Project = {
   tagline: string;
   role: string;
   timeline: string;
-  team: string;
+  // team: string;
   users: string;
   heroImg: string;
   problem: string;
@@ -675,18 +675,16 @@ type Project = {
 
 const projects: Project[] = [
   {
-    slug: "safe-connect-texas",
-    title: "SafeConnect Texas",
-    tagline:
-      "A centralized digital platform connecting victims with trusted resources across Texas.",
-    role: "Director of Technology",
-    timeline: "2025",
-    team: "1 Designer · 2 Engineers · Product Lead",
-    users: "Victims, service providers, advocates",
-    heroImg:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&h=700&fit=crop&auto=format",
+    slug: "safe-space",
+    title: "The Safe Space for Students",
+    tagline: "An interactive resource hub for students",
+    role: "Technical Program Manager",
+    timeline: "2025-2026",
+    // team: "1 Designer · 2 Engineers · Product Lead",
+    users: "Students in Texas age 13-18",
+    heroImg: "/public/SafeSpaceBanner.png",
     problem:
-      "Victims of crime in Texas often had to search across dozens of disconnected organizations to find support — shelters, legal aid, counseling, financial assistance — each on separate websites with inconsistent information. This created unnecessary friction during already traumatic situations, and many people simply gave up. Service providers had no unified way to refer clients, and advocates lacked visibility into what resources were actually available in each region.",
+      "Students often left Crime Stoppers' school safety presentations wanting more information about topics like bullying, mental health, online safety, abuse, and drug awareness, but presenters couldn't provide personalized guidance or ongoing support to every student. Existing resources were scattered across organizations, written primarily for adults, and lacked engaging, age-appropriate content. We saw an opportunity to extend the impact of every presentation by creating a centralized, interactive platform where students could continue learning through trusted resources and gamified experiences designed specifically for teens.",
     myRole: [
       "Defined product vision and aligned stakeholders across legal, social services, and technology teams",
       "Prioritized the roadmap based on survivor feedback and legislative requirements",
@@ -744,10 +742,9 @@ const projects: Project[] = [
       "A student-centered digital platform delivering safety education to 90,000 students across Texas.",
     role: "Technical Program Manager",
     timeline: "2025",
-    team: "1 Designer · 3 Engineers · Curriculum Partner",
+    // team: "1 Designer · 3 Engineers · Curriculum Partner",
     users: "Students, educators, school administrators",
-    heroImg:
-      "https://images.unsplash.com/photo-1624918959325-4ab1f51306d1?w=1400&h=700&fit=crop&auto=format",
+    heroImg: "/public/SafeSpaceBanner.png",
     problem:
       "Texas schools lacked consistent, accessible safety education resources. Existing materials were siloed by district, difficult to navigate, and not designed with students in mind. There was no unified platform — teachers were piecing together content from unrelated sources, and students had no way to access information independently or anonymously.",
     myRole: [
@@ -797,16 +794,15 @@ const projects: Project[] = [
       "Building with educators taught me the importance of validating assumptions early. Teachers have deeply practical constraints — 45-minute class periods, unreliable wifi, 30 students with 30 different devices. Designing for those constraints made the product meaningfully better.",
   },
   {
-    slug: "legislative-data-dashboard",
-    title: "Legislative Data Dashboard",
+    slug: "victim-hub",
+    title: "Texas Victim's Rights and Resource Hub",
     tagline:
       "Real-time data infrastructure and dashboards informing Texas state leadership during the 2025 legislative session.",
     role: "Technical Program Manager",
     timeline: "2025",
-    team: "2 Data Engineers · Policy Analyst · Communications Lead",
+    // team: "2 Data Engineers · Policy Analyst · Communications Lead",
     users: "Texas legislators, policy staff, organizational leadership",
-    heroImg:
-      "https://images.unsplash.com/photo-1558801417-308cab5d5af9?w=1400&h=700&fit=crop&auto=format",
+    heroImg: "/public/victimhub.png",
     problem:
       "During the Texas legislative session, decision-makers needed accurate, up-to-date public safety data — but existing reporting was manual, slow, and inconsistent. Analysts were spending 40% of their time pulling and cleaning data rather than analyzing it. Legislators were making decisions based on reports that were weeks out of date.",
     myRole: [
@@ -1010,7 +1006,7 @@ function ProjectDetail() {
               {[
                 { label: "Role", value: project.role },
                 { label: "Timeline", value: project.timeline },
-                { label: "Team", value: project.team },
+                // { label: "Team", value: project.team },
                 { label: "Users", value: project.users },
               ].map(({ label, value }) => (
                 <div key={label}>
