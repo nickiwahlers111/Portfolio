@@ -1,3 +1,5 @@
+import BeyondWork from "./components/BeyondWork";
+import Contact from "./components/Contact";
 import {
   createBrowserRouter,
   Outlet,
@@ -13,7 +15,6 @@ import {
   Mail,
   Linkedin,
   MapPin,
-  Calendar,
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";
@@ -61,17 +62,19 @@ function Nav() {
           : ""
       }`}
     >
-      <nav className="max-w-screen-xl mx-auto px-8 lg:px-16 h-[4.5rem] flex items-center justify-between">
+      <nav className="max-w-screen-xl mx-auto px-4 sm:px-8 lg:px-16 h-[4.5rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 sm:gap-0">
         <NavLink
           to="/"
           className="font-['Instrument_Serif'] font-normal text-[1.05rem] text-foreground hover:text-primary transition-colors duration-300"
         >
           Nicki Wahlers
         </NavLink>
-        <div className="flex items-center gap-8 sm:gap-10">
+        <div className="flex items-center gap-4 sm:gap-6 lg:gap-10">
           {[
             { to: "/resume", label: "Resume" },
             { to: "/projects", label: "Projects" },
+            { to: "/beyond-work", label: "Beyond work" },
+            { to: "/contact", label: "Contact" },
           ].map(({ to, label }) => (
             <NavLink
               key={to}
@@ -87,12 +90,7 @@ function Nav() {
               {label}
             </NavLink>
           ))}
-          <a
-            href="mailto:nicki.wahlers@gmail.com"
-            className="font-['Geist'] text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 hidden sm:block"
-          >
-            Contact
-          </a>
+
         </div>
       </nav>
     </header>
@@ -124,6 +122,8 @@ function Footer() {
             <a
               key={label}
               href={href}
+              target={href.startsWith("https://") ? "_blank" : undefined}
+              rel={href.startsWith("https://") ? "noopener noreferrer" : undefined}
               aria-label={label}
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
@@ -338,113 +338,103 @@ function Home() {
 
 // ─── Resume ───────────────────────────────────────────────────────────────────
 
+const professionalSummary = "I love taking a cross-departmental problem and building the strategy and processes that actually make it work. As a Technical Program Manager, I've led initiatives that supported a 15x increase in organizational capacity by replacing ad-hoc, program-by-program work with clear metrics and repeatable operating systems. What energizes me most is the people side of it: getting engineers, executives, and frontline stakeholders on the same page and moving in the same direction.";
+
 const experience = [
   {
-    company: "Crime Stoppers of Houston",
-    role: "Director of Technology",
-    period: "Apr 2026 — Present",
-    location: "Houston, TX",
-    bullets: [
-      "Set technical strategy and organizational vision for multi-program initiatives, aligning technical priorities with organizational goals and leading cross-functional teams to deliver scalable systems and digital products that strengthen data infrastructure and platform capabilities.",
-      "Directed technology operations across multiple organizational programs, balancing stakeholder priorities, defining KPIs, managing delivery timelines, and driving continuous process improvements.",
-    ],
+    "company": "Crime Stoppers of Houston",
+    "role": "Technical Program Manager - All Programs",
+    "period": "November 2025 – August 2026",
+    "location": "Remote",
+    "bullets": [
+      "Led cross-functional programs across 8+ product lines, defining roadmaps and building scalable, repeatable operating systems that supported a 15x increase in organizational capacity and demand.",
+      "Directed the strategy and launch of a student-centered platform, SafeSpace, coordinating across stakeholders to achieve 10x engagement and drive 26K users and 104K interactions in the first month.",
+      "Led the coordination and delivery of a legislative-deadline-driven data analysis initiative, synthesizing inputs from multiple government data sources into clear findings that directly informed policy outcomes for Texas 2025 legislative session bills SJR 5, SB 9, SB 40, HB 75.",
+      "Set strategy and organizational vision across portfolio initiatives, establishing KPIs, directing delivery timelines, and driving continuous process improvement to strengthen operational capabilities."
+    ]
   },
   {
-    company: "",
-    role: "Technical Program Manager - All Programs",
-    period: "Nov 2025 – Apr 2026",
-    location: "Houston, TX",
-    bullets: [
-      "Led technology initiatives across 8+ product lines, defining roadmaps, prioritizing delivery, and implementing scalable systems that supported a 15x increase in organizational capacity and user demand.",
-      "Owned end-to-end program execution including requirements gathering, roadmap planning, prioritization, and bi-monthly release cycles across multiple concurrent initiatives.",
-      "Directed development and launch of a student-centered digital platform, achieving 10x projected engagement and driving 26K users and 104K interactions in the first month.",
-      "Translated legislative and policy requirements into technical deliverables, enabling data-driven decision-making for Texas state leadership during the 2025 legislative session.",
-    ],
+    "company": "",
+    "role": "Product Manager",
+    "period": "February 2025 – November 2025",
+    "location": "Houston, TX",
+    "bullets": [
+      "Shipped 4 new data products, including a redesigned crime data dashboard and a university crime data dashboard, and delivered ongoing performance analysis to city council offices as a trusted external partner.",
+      "Led a ground-up process improvement initiative, introducing Agile methodology and moving the team from ad-hoc, self-directed work to structured, predictable delivery cycles; a framework later adopted by other departments to improve quality and accountability."
+    ]
   },
   {
-    company: "",
-    role: "Technical Program Manager - The Glenda Gordy Research Center",
-    period: "Feb 2025 - Nov 2025",
-    location: "Houston, TX",
-    bullets: [
-      "Owned technical strategy and end-to-end program execution of the Glenda Gordy Research Center, building scalable data infrastructure and products that expanded access to public safety data.",
-      "Facilitated Agile sprint planning, backlog refinement and prioritization with engineering and non-technical teams to align product delivery with organizational goals.",
-    ],
+    "company": "",
+    "role": "Data Analyst",
+    "period": "June 2024 – February 2025",
+    "location": "Houston, TX",
+    "bullets": [
+      "Redesigned Research Center dashboards around real user needs including introducing an original interactive crime map, growing average monthly community reach from ~1,200 to ~80,000 (a 65x increase) and establishing the dashboards as the organization's primary public data resource."
+    ]
   },
   {
-    company: "",
-    role: "Data Analyst - The Glenda Gordy Research Center",
-    period: "June 2024 - Feb 2025",
-    location: "Houston, TX",
-    bullets: [
-      "Designed and delivered interactive dashboards and data products, translating complex datasets into scalable reporting solutions that informed community stakeholders and legislative decisions.",
-    ],
+    "company": "Airship",
+    "role": "Data Engineering Intern",
+    "period": "January 2022 – June 2022",
+    "location": "Portland, OR",
+    "bullets": [
+      "Contributed to a data pipeline supporting analytics for Airship's customer notification SDK, writing serialization code and tests to capture engagement data used by enterprise clients to measure performance."
+    ]
   },
   {
-    company: "Airship",
-    role: "Data Engineering Intern",
-    period: "Jan 2022 - Jun 2022",
-    location: "Portland, OR",
-    bullets: [],
+    "company": "Nike",
+    "role": "Data Project Manager",
+    "period": "March 2020 – May 2022",
+    "location": "Beaverton, OR",
+    "bullets": [
+      "Catalogued and structured data on thousands of physical branding assets across the Nike WHQ campus, then partnered with app developers to translate the dataset into requirements for a tool used by Nike's Workplace Design and Development team to assess asset health and status."
+    ]
   },
   {
-    company: "Nike",
-    role: "Data Project Manager",
-    period: "Mar 2020 - May 2022",
-    location: "Beaverton, OR",
-    bullets: [],
-  },
-  {
-    company: "Act-On Software",
-    role: "Software Engineering Intern",
-    period: "Jun 2021 - Dec 2021",
-    location: "Portland, OR",
-    bullets: [],
-  },
+    "company": "Act-On Software",
+    "role": "Software Engineering Intern",
+    "period": "June 2021 – December 2021",
+    "location": "Portland, OR",
+    "bullets": [
+      "Resolved a customer-reported data issue end-to-end, met with the customer to scope the problem, debugged the root cause in IntelliJ, fixed the malfunctioning input parser in Java with corresponding unit tests, and confirmed the resolution directly with the customer."
+    ]
+  }
 ];
 
 const skills: Record<string, string[]> = {
-  "Program and Project Management": [
-    "Project Management",
-    "Software Development Lifecycle",
-    "Workplan Management",
-    "Budget Management",
-    "Agile & Waterfall Methodologies",
-    "Technical Roadmap Design",
-    "Product Roadmapping",
-    "Product Lifecycle Management",
-    "Requirements Gathering",
-    "Stakeholder Engagement",
-    "Cross-Functional Collaboration",
-    "Build & Release Coordination",
-    "Risk Mitigation",
-    "Cross-Functional Leadership",
-  ],
-  "Systems, Data & Engineering": [
-    "Data Infrastructure",
-    "Data Products",
-    "SQL",
-    "Data Analysis & Reporting",
+  "Program & Process Management": [
+    "Program Management",
     "KPI Development",
+    "Performance Improvement",
+    "Process Development",
+    "Agile & Waterfall Methodologies",
+    "Project Planning",
+    "Strategic Roadmap Design",
+    "Cross-Functional Leadership",
+    "Stakeholder Engagement",
+    "Risk Mitigation",
+    "Resource Allocation",
+    "Change Management",
+    "Budget Management"
+  ],
+  "Data & Analysis": [
+    "Data Analysis & Reporting",
     "Data Visualization",
-    "System Reliability",
-    "CI/CD",
-    "Build Pipelines",
-    "Testing & Validation",
-    "Version Control (Git)",
+    "Trend Analysis",
+    "SQL",
+    "Data-Driven Decision Making",
+    "Business Modeling",
+    "Python"
   ],
   "Tools and Platforms": [
     "Jira",
     "Asana",
-    "Git",
-    "AWS",
-    "Tableau",
-    "Google Analytics",
-    "Excel",
     "Smartsheet",
-    "Figma",
-    "Microsoft Office Suite",
-  ],
+    "Tableau",
+    "Excel",
+    "Google Analytics",
+    "Microsoft Office Suite"
+  ]
 };
 
 function Resume() {
@@ -465,7 +455,7 @@ function Resume() {
               </h1>
               <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-3 flex items-center gap-2">
                 <MapPin size={12} strokeWidth={1.5} />
-                Technology &amp; Product Leader · Portland, OR
+                Technical Program Manager · Los Angeles
               </p>
             </div>
             <div className="flex items-center gap-6 self-start sm:self-auto">
@@ -479,6 +469,8 @@ function Resume() {
                 <a
                   key={href}
                   href={href}
+                  target={href.startsWith("https://") ? "_blank" : undefined}
+                  rel={href.startsWith("https://") ? "noopener noreferrer" : undefined}
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Icon size={15} strokeWidth={1.5} />
@@ -494,6 +486,17 @@ function Resume() {
             </div>
           </div>
         </div>
+      </Reveal>
+
+      <Reveal>
+        <section aria-labelledby="resume-summary" className="mb-14 pb-10 border-b border-border">
+          <h2 id="resume-summary" className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-muted-foreground mb-5">
+            Professional Summary
+          </h2>
+          <p className="font-['Geist'] font-light text-sm text-muted-foreground leading-[1.85] max-w-3xl">
+            {professionalSummary}
+          </p>
+        </section>
       </Reveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_15rem] gap-16 lg:gap-20">
@@ -563,20 +566,20 @@ function Resume() {
                 Portland State University
               </p>
               <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-0.5">
-                M.S. Computer Science
+                M.S. Computer Science · Software and Data Engineering
               </p>
-              <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-1 flex items-center gap-1.5">
-                <Calendar size={11} strokeWidth={1.5} /> Class of 2023
+              <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-1">
+                Portland, OR
               </p>
               <div className="mt-5">
                 <p className="font-['Instrument_Serif'] font-normal text-base text-foreground">
                   Gonzaga University
                 </p>
                 <p className="font-['Geist'] font-light text-sm text-muted-foreground mt-0.5">
-                  B.A. Mathematics and International Studies
+                  B.A. Mathematics and International Relations
                 </p>
-                <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-1 flex items-center gap-1.5">
-                  <Calendar size={11} strokeWidth={1.5} /> Class of 2019
+                <p className="font-['Geist'] font-light text-xs text-muted-foreground mt-1">
+                  Spokane, WA
                 </p>
               </div>
             </div>
@@ -614,6 +617,11 @@ function Resume() {
               <div className="space-y-3">
                 {[
                   {
+                    label: "Phone",
+                    value: "503-758-8750",
+                    href: "tel:+15037588750",
+                  },
+                  {
                     label: "Email",
                     value: "nicki.wahlers@gmail.com",
                     href: "mailto:nicki.wahlers@gmail.com",
@@ -633,6 +641,8 @@ function Resume() {
                     </span>
                     <a
                       href={href}
+                      target={href.startsWith("https://") ? "_blank" : undefined}
+                      rel={href.startsWith("https://") ? "noopener noreferrer" : undefined}
                       className="font-['Geist'] text-xs text-foreground hover:text-primary transition-colors duration-300 text-right"
                     >
                       {value}
@@ -1276,6 +1286,8 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: "resume", Component: Resume },
+      { path: "contact", Component: Contact },
+      { path: "beyond-work", Component: BeyondWork },
       { path: "projects", Component: Projects },
       { path: "projects/:slug", Component: ProjectDetail },
       { path: "*", Component: NotFound },
