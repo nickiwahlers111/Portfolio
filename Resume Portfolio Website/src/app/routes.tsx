@@ -90,7 +90,6 @@ function Nav() {
               {label}
             </NavLink>
           ))}
-
         </div>
       </nav>
     </header>
@@ -123,7 +122,9 @@ function Footer() {
               key={label}
               href={href}
               target={href.startsWith("https://") ? "_blank" : undefined}
-              rel={href.startsWith("https://") ? "noopener noreferrer" : undefined}
+              rel={
+                href.startsWith("https://") ? "noopener noreferrer" : undefined
+              }
               aria-label={label}
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
@@ -157,7 +158,7 @@ function Home() {
         <div className="flex flex-col justify-end px-8 lg:px-16 pb-16 lg:pb-24 pt-32 lg:pt-0">
           <Reveal delay={0.1}>
             <p className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-primary mb-10">
-              Director of Technology · Portland, OR
+              Technical Program Manager · Los Angeles, CA
             </p>
           </Reveal>
           <Reveal delay={0.2}>
@@ -198,9 +199,9 @@ function Home() {
               </NavLink>
               <NavLink
                 to="/resume"
-                className="font-['Geist'] text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className="font-['Geist'] text-sm text-foreground border-b border-foreground pb-px hover:border-primary hover:text-primary transition-colors duration-300 flex items-center gap-1.5"
               >
-                Resume
+                Resume <ArrowUpRight size={12} strokeWidth={1.5} />
               </NavLink>
             </div>
           </Reveal>
@@ -214,11 +215,13 @@ function Home() {
           style={{ minHeight: "60vh" }}
         >
           <img
-            src="https://images.unsplash.com/photo-1772442164006-ba1b8e7bfc32?w=960&h=1200&fit=crop&auto=format"
-            alt="Working in warm natural light"
-            className="w-full h-full object-cover"
+            src="/home-placeholder-updated.png"
+            alt="Photo coming soon! Working on getting a better picture, but I can’t let this hold me back. Stay tuned for this and more."
+            width={712}
+            height={1264}
+            fetchPriority="high"
+            className="w-full h-auto lg:absolute lg:inset-0 lg:h-full object-contain"
           />
-          <div className="absolute inset-0 bg-primary/8 mix-blend-multiply" />
         </motion.div>
       </section>
 
@@ -338,67 +341,68 @@ function Home() {
 
 // ─── Resume ───────────────────────────────────────────────────────────────────
 
-const professionalSummary = "I love taking a cross-departmental problem and building the strategy and processes that actually make it work. As a Technical Program Manager, I've led initiatives that supported a 15x increase in organizational capacity by replacing ad-hoc, program-by-program work with clear metrics and repeatable operating systems. What energizes me most is the people side of it: getting engineers, executives, and frontline stakeholders on the same page and moving in the same direction.";
+const professionalSummary =
+  "I love taking a cross-departmental problem and building the strategy and processes that actually make it work. As a Technical Program Manager, I've led initiatives that supported a 15x increase in organizational capacity by replacing ad-hoc, program-by-program work with clear metrics and repeatable operating systems. What energizes me most is the people side of it: getting engineers, executives, and frontline stakeholders on the same page and moving in the same direction.";
 
 const experience = [
   {
-    "company": "Crime Stoppers of Houston",
-    "role": "Technical Program Manager - All Programs",
-    "period": "November 2025 – August 2026",
-    "location": "Remote",
-    "bullets": [
+    company: "Crime Stoppers of Houston",
+    role: "Technical Program Manager - All Programs",
+    period: "November 2025 – August 2026",
+    location: "Remote",
+    bullets: [
       "Led cross-functional programs across 8+ product lines, defining roadmaps and building scalable, repeatable operating systems that supported a 15x increase in organizational capacity and demand.",
       "Directed the strategy and launch of a student-centered platform, SafeSpace, coordinating across stakeholders to achieve 10x engagement and drive 26K users and 104K interactions in the first month.",
       "Led the coordination and delivery of a legislative-deadline-driven data analysis initiative, synthesizing inputs from multiple government data sources into clear findings that directly informed policy outcomes for Texas 2025 legislative session bills SJR 5, SB 9, SB 40, HB 75.",
-      "Set strategy and organizational vision across portfolio initiatives, establishing KPIs, directing delivery timelines, and driving continuous process improvement to strengthen operational capabilities."
-    ]
+      "Set strategy and organizational vision across portfolio initiatives, establishing KPIs, directing delivery timelines, and driving continuous process improvement to strengthen operational capabilities.",
+    ],
   },
   {
-    "company": "",
-    "role": "Product Manager",
-    "period": "February 2025 – November 2025",
-    "location": "Houston, TX",
-    "bullets": [
+    company: "",
+    role: "Product Manager",
+    period: "February 2025 – November 2025",
+    location: "Houston, TX",
+    bullets: [
       "Shipped 4 new data products, including a redesigned crime data dashboard and a university crime data dashboard, and delivered ongoing performance analysis to city council offices as a trusted external partner.",
-      "Led a ground-up process improvement initiative, introducing Agile methodology and moving the team from ad-hoc, self-directed work to structured, predictable delivery cycles; a framework later adopted by other departments to improve quality and accountability."
-    ]
+      "Led a ground-up process improvement initiative, introducing Agile methodology and moving the team from ad-hoc, self-directed work to structured, predictable delivery cycles; a framework later adopted by other departments to improve quality and accountability.",
+    ],
   },
   {
-    "company": "",
-    "role": "Data Analyst",
-    "period": "June 2024 – February 2025",
-    "location": "Houston, TX",
-    "bullets": [
-      "Redesigned Research Center dashboards around real user needs including introducing an original interactive crime map, growing average monthly community reach from ~1,200 to ~80,000 (a 65x increase) and establishing the dashboards as the organization's primary public data resource."
-    ]
+    company: "",
+    role: "Data Analyst",
+    period: "June 2024 – February 2025",
+    location: "Houston, TX",
+    bullets: [
+      "Redesigned Research Center dashboards around real user needs including introducing an original interactive crime map, growing average monthly community reach from ~1,200 to ~80,000 (a 65x increase) and establishing the dashboards as the organization's primary public data resource.",
+    ],
   },
   {
-    "company": "Airship",
-    "role": "Data Engineering Intern",
-    "period": "January 2022 – June 2022",
-    "location": "Portland, OR",
-    "bullets": [
-      "Contributed to a data pipeline supporting analytics for Airship's customer notification SDK, writing serialization code and tests to capture engagement data used by enterprise clients to measure performance."
-    ]
+    company: "Airship",
+    role: "Data Engineering Intern",
+    period: "January 2022 – June 2022",
+    location: "Portland, OR",
+    bullets: [
+      "Contributed to a data pipeline supporting analytics for Airship's customer notification SDK, writing serialization code and tests to capture engagement data used by enterprise clients to measure performance.",
+    ],
   },
   {
-    "company": "Nike",
-    "role": "Data Project Manager",
-    "period": "March 2020 – May 2022",
-    "location": "Beaverton, OR",
-    "bullets": [
-      "Catalogued and structured data on thousands of physical branding assets across the Nike WHQ campus, then partnered with app developers to translate the dataset into requirements for a tool used by Nike's Workplace Design and Development team to assess asset health and status."
-    ]
+    company: "Nike",
+    role: "Data Project Manager",
+    period: "March 2020 – May 2022",
+    location: "Beaverton, OR",
+    bullets: [
+      "Catalogued and structured data on thousands of physical branding assets across the Nike WHQ campus, then partnered with app developers to translate the dataset into requirements for a tool used by Nike's Workplace Design and Development team to assess asset health and status.",
+    ],
   },
   {
-    "company": "Act-On Software",
-    "role": "Software Engineering Intern",
-    "period": "June 2021 – December 2021",
-    "location": "Portland, OR",
-    "bullets": [
-      "Resolved a customer-reported data issue end-to-end, met with the customer to scope the problem, debugged the root cause in IntelliJ, fixed the malfunctioning input parser in Java with corresponding unit tests, and confirmed the resolution directly with the customer."
-    ]
-  }
+    company: "Act-On Software",
+    role: "Software Engineering Intern",
+    period: "June 2021 – December 2021",
+    location: "Portland, OR",
+    bullets: [
+      "Resolved a customer-reported data issue end-to-end, met with the customer to scope the problem, debugged the root cause in IntelliJ, fixed the malfunctioning input parser in Java with corresponding unit tests, and confirmed the resolution directly with the customer.",
+    ],
+  },
 ];
 
 const skills: Record<string, string[]> = {
@@ -415,7 +419,7 @@ const skills: Record<string, string[]> = {
     "Risk Mitigation",
     "Resource Allocation",
     "Change Management",
-    "Budget Management"
+    "Budget Management",
   ],
   "Data & Analysis": [
     "Data Analysis & Reporting",
@@ -424,7 +428,7 @@ const skills: Record<string, string[]> = {
     "SQL",
     "Data-Driven Decision Making",
     "Business Modeling",
-    "Python"
+    "Python",
   ],
   "Tools and Platforms": [
     "Jira",
@@ -433,8 +437,8 @@ const skills: Record<string, string[]> = {
     "Tableau",
     "Excel",
     "Google Analytics",
-    "Microsoft Office Suite"
-  ]
+    "Microsoft Office Suite",
+  ],
 };
 
 function Resume() {
@@ -470,7 +474,11 @@ function Resume() {
                   key={href}
                   href={href}
                   target={href.startsWith("https://") ? "_blank" : undefined}
-                  rel={href.startsWith("https://") ? "noopener noreferrer" : undefined}
+                  rel={
+                    href.startsWith("https://")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Icon size={15} strokeWidth={1.5} />
@@ -489,8 +497,14 @@ function Resume() {
       </Reveal>
 
       <Reveal>
-        <section aria-labelledby="resume-summary" className="mb-14 pb-10 border-b border-border">
-          <h2 id="resume-summary" className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-muted-foreground mb-5">
+        <section
+          aria-labelledby="resume-summary"
+          className="mb-14 pb-10 border-b border-border"
+        >
+          <h2
+            id="resume-summary"
+            className="font-['Geist'] text-[0.6rem] tracking-[0.25em] uppercase text-muted-foreground mb-5"
+          >
             Professional Summary
           </h2>
           <p className="font-['Geist'] font-light text-sm text-muted-foreground leading-[1.85] max-w-3xl">
@@ -551,7 +565,7 @@ function Resume() {
                     )}
                   </div>
                 </Reveal>
-              )
+              ),
             )}
           </div>
         </div>
@@ -641,8 +655,14 @@ function Resume() {
                     </span>
                     <a
                       href={href}
-                      target={href.startsWith("https://") ? "_blank" : undefined}
-                      rel={href.startsWith("https://") ? "noopener noreferrer" : undefined}
+                      target={
+                        href.startsWith("https://") ? "_blank" : undefined
+                      }
+                      rel={
+                        href.startsWith("https://")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                       className="font-['Geist'] text-xs text-foreground hover:text-primary transition-colors duration-300 text-right"
                     >
                       {value}
@@ -671,6 +691,13 @@ type Project = {
   // team: string;
   users: string;
   heroImg: string;
+  screenshots?: {
+    src: string;
+    alt: string;
+    caption: string;
+    width?: number;
+    height?: number;
+  }[];
   problem: string;
   myRole: string[];
   goals: string[];
@@ -746,73 +773,124 @@ const projects: Project[] = [
       "Building with and for survivors taught me that simplicity is not a design preference — it is an ethical obligation. Every unnecessary step, every confusing label, every broken link has a real cost for real people. I also learned that constraints, when named honestly and early, become creative catalysts rather than blockers. This project changed how I think about what technology is actually for.",
   },
   {
-    slug: "student-safety-platform",
-    title: "Student Safety Platform",
+    slug: "glenda-gordy-research-center",
+    title: "The Glenda Gordy Research Center",
     tagline:
-      "A student-centered digital platform delivering safety education to 90,000 students across Texas.",
-    role: "Technical Program Manager",
-    timeline: "2025",
-    // team: "1 Designer · 3 Engineers · Curriculum Partner",
-    users: "Students, educators, school administrators",
-    heroImg: "/public/SafeSpaceBanner.png",
+      "Making public safety data more accessible through interactive dashboards, data products, and clear reporting.",
+    role: "Product Manager / Data Analyst",
+    timeline: "2024–2025",
+    users:
+      "Community members, city council offices, and public safety stakeholders",
+    heroImg: "/projects/research-center/homepage.png",
+    screenshots: [
+      {
+        src: "/projects/research-center/homepage.png",
+        alt: "The Glenda Gordy Research Center homepage with the Houston skyline and links to dashboards and reports",
+        caption:
+          "The Research Center homepage connects visitors with public safety dashboards, research, and reporting.",
+        width: 1594,
+        height: 853,
+      },
+      {
+        src: "/projects/research-center/crime-map.png",
+        alt: "Houston Crime Map showing year and offense filters and incident clusters",
+        caption:
+          "The Houston Crime Map lets visitors explore incident-level data by year and offense type.",
+        width: 1594,
+        height: 853,
+      },
+      {
+        src: "/projects/research-center/team.png",
+        alt: "Research Center team standing beside data displays at an event",
+        caption: "Sharing the Research Center’s work as a team.",
+        width: 317,
+        height: 211,
+      },
+      {
+        src: "/projects/research-center/presentation.png",
+        alt: "Nicki presenting the Research Center website and data dashboards to an audience",
+        caption: "Presenting the website and its data tools.",
+        width: 468,
+        height: 312,
+      },
+    ],
     problem:
-      "Texas schools lacked consistent, accessible safety education resources. Existing materials were siloed by district, difficult to navigate, and not designed with students in mind. There was no unified platform — teachers were piecing together content from unrelated sources, and students had no way to access information independently or anonymously.",
+      "The Research Center needed public data resources shaped around real user needs, alongside a more structured approach to delivering new products. The team was working through ad-hoc, self-directed processes, while its dashboards reached an average of approximately 1,200 people per month.",
     myRole: [
-      "Owned end-to-end product execution from discovery through launch",
-      "Managed relationship with curriculum partner and content review cycles",
-      "Defined technical architecture requirements for scale and compliance",
-      "Coordinated rollout across 150+ school districts",
-      "Established engagement KPIs and reported to organizational leadership",
-      "Led retrospectives and incorporated educator feedback into subsequent releases",
+      "Redesigned Research Center dashboards around real user needs and introduced an original interactive crime map.",
+      "Shipped four new data products, including a redesigned crime data dashboard and a university crime data dashboard.",
+      "Delivered ongoing performance analysis to city council offices as a trusted external partner.",
+      "Introduced Agile methodology and structured delivery cycles to improve quality and accountability.",
     ],
     goals: [
-      "Reach 90,000+ students in the first year",
-      "Provide anonymous access for sensitive topics",
-      "Support educators with downloadable classroom materials",
-      "Ensure compliance with Texas student data privacy law (FERPA, SOPPA)",
-      "Build on reusable infrastructure from the broader platform",
+      "Make public safety data easier for the community to explore and understand.",
+      "Expand community reach through more useful interactive dashboards.",
+      "Replace ad-hoc work with structured, predictable delivery cycles.",
     ],
-    discovery:
-      "We surveyed 400 students and ran focus groups with teachers across three districts. The clearest signal: students wanted to access information without any record of having done so. That insight shaped our entire approach to anonymity — we designed for zero-login access as the default, not an edge case.",
-    constraints: [
-      "Texas student data privacy law (FERPA, SOPPA)",
-      "Tight launch deadline aligned to school year calendar",
-      "Content had to pass legal review from three separate teams",
-      "Accessibility requirements for students with disabilities",
-      "Limited device diversity — many students only had school-issued Chromebooks",
-    ],
+    discovery: "",
+    constraints: [],
     process: [
-      "Discovery",
-      "Content Strategy",
-      "Architecture",
-      "Design",
-      "Development",
-      "Pilot",
-      "Statewide Launch",
+      "Dashboard Redesign",
+      "Interactive Crime Map",
+      "New Data Products",
+      "Agile Delivery",
+      "Performance Analysis",
     ],
     decisions:
-      "We chose to build on the existing SafeConnect infrastructure rather than a standalone system. This introduced some constraints on the content model, but cut development time by six weeks and gave us a proven, accessible foundation. The tradeoff was worth it.",
+      "I approached the work as both a data and a product challenge: redesigning dashboards around user needs while introducing a delivery framework that made the team’s work more structured and predictable.",
     challenges:
-      "Content review cycles took twice as long as estimated, compressing the development and QA window. We managed this by running design and development in parallel with review — a riskier approach that required tight communication between teams but ultimately saved the timeline.",
+      "The process improvement initiative moved the team from ad-hoc, self-directed work to structured delivery cycles. The framework was later adopted by other departments to improve quality and accountability.",
     outcomes: [
-      { value: "90,000", label: "Students reached" },
-      { value: "10×", label: "Projected engagement" },
-      { value: "150+", label: "School districts" },
-      { value: "26,000", label: "Platform users" },
+      {
+        value: "4",
+        label: "New data products shipped",
+      },
+      {
+        value: "~1,200",
+        label: "Average monthly reach before redesign",
+      },
+      {
+        value: "~80,000",
+        label: "Average monthly reach after redesign",
+      },
+      {
+        value: "65×",
+        label: "Increase in community reach",
+      },
     ],
-    learned:
-      "Building with educators taught me the importance of validating assumptions early. Teachers have deeply practical constraints — 45-minute class periods, unreliable wifi, 30 students with 30 different devices. Designing for those constraints made the product meaningfully better.",
+    learned: "",
   },
   {
     slug: "victim-hub",
     title: "Texas Victim's Rights and Resource Hub",
     tagline:
-      "Real-time data infrastructure and dashboards informing Texas state leadership during the 2025 legislative session.",
+      "An informational resource platform providing guidance on victim rights and support services throughout the criminal justice process.",
     role: "Technical Program Manager",
-    timeline: "2025",
+    timeline: "2025-2026",
     // team: "2 Data Engineers · Policy Analyst · Communications Lead",
-    users: "Texas legislators, policy staff, organizational leadership",
-    heroImg: "/public/victimhub.png",
+    users:
+      "Victims of violent crime in Texas, Service providers,Texas Legislators, Victim services advocates ",
+    heroImg: "/victimhub.png",
+    screenshots: [
+      {
+        src: "/projects/victim-hub/homepage.png",
+        alt: "Texas Victims’ Rights and Support Hub homepage with stage-based support and a Quick Exit button",
+        caption:
+          "The homepage introduces the hub and guides visitors toward support for their stage of the process.",
+      },
+      {
+        src: "/projects/victim-hub/resource-directory.png",
+        alt: "Resource directory showing county, crime type and service filters alongside search and organization cards",
+        caption:
+          "Visitors can search the resource directory and narrow results by county, crime type, and service type.",
+      },
+      {
+        src: "/projects/victim-hub/safety-alert.png",
+        alt: "Safety alert dialog explaining internet monitoring and the hub’s Quick Exit controls",
+        caption:
+          "An entry safety alert explains browsing privacy and how to leave the site using Quick Exit or the Escape key.",
+      },
+    ],
     problem:
       "During the Texas legislative session, decision-makers needed accurate, up-to-date public safety data — but existing reporting was manual, slow, and inconsistent. Analysts were spending 40% of their time pulling and cleaning data rather than analyzing it. Legislators were making decisions based on reports that were weeks out of date.",
     myRole: [
@@ -1032,6 +1110,54 @@ function ProjectDetail() {
           </div>
         </Reveal>
 
+        {project.screenshots && (
+          <section
+            aria-labelledby="project-screenshots"
+            className="pt-12 pb-12 border-b border-border"
+          >
+            <h2
+              id="project-screenshots"
+              className="font-['Geist'] text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground mb-8"
+            >
+              {project.slug === "victim-hub"
+                ? "A look inside the hub"
+                : "The Research Center in action"}
+            </h2>
+            <div className="space-y-10">
+              {project.screenshots.map((screenshot) => (
+                <figure
+                  key={screenshot.src}
+                  className={
+                    screenshot.width && screenshot.width < 600
+                      ? "max-w-md mx-auto w-full"
+                      : undefined
+                  }
+                >
+                  <a
+                    href={screenshot.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block border border-border bg-muted focus-visible:outline-primary"
+                    aria-label={`${screenshot.alt} (open full-size image in a new tab)`}
+                  >
+                    <img
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      loading="lazy"
+                      width={screenshot.width || 1594}
+                      height={screenshot.height || 853}
+                      className="w-full h-auto"
+                    />
+                  </a>
+                  <figcaption className="font-['Geist'] text-sm leading-[1.75] mt-3">
+                    {screenshot.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* The Problem */}
         <CaseSection label="The Problem" delay={0.05}>
           <p className="font-['Geist'] font-light text-base text-muted-foreground leading-[1.85]">
@@ -1072,27 +1198,31 @@ function ProjectDetail() {
         </CaseSection>
 
         {/* Discovery */}
-        <CaseSection label="Discovery" delay={0.05}>
-          <p className="font-['Geist'] font-light text-base text-muted-foreground leading-[1.85]">
-            {project.discovery}
-          </p>
-        </CaseSection>
+        {project.discovery && (
+          <CaseSection label="Discovery" delay={0.05}>
+            <p className="font-['Geist'] font-light text-base text-muted-foreground leading-[1.85]">
+              {project.discovery}
+            </p>
+          </CaseSection>
+        )}
 
         {/* Constraints */}
-        <CaseSection label="Constraints" delay={0.05}>
-          <ul className="space-y-3">
-            {project.constraints.map((c, i) => (
-              <li key={i} className="flex gap-3">
-                <span className="text-primary mt-[0.45rem] flex-shrink-0 text-[0.4rem]">
-                  ●
-                </span>
-                <p className="font-['Geist'] font-light text-base text-muted-foreground leading-[1.75]">
-                  {c}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </CaseSection>
+        {project.constraints.length > 0 && (
+          <CaseSection label="Constraints" delay={0.05}>
+            <ul className="space-y-3">
+              {project.constraints.map((c, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="text-primary mt-[0.45rem] flex-shrink-0 text-[0.4rem]">
+                    ●
+                  </span>
+                  <p className="font-['Geist'] font-light text-base text-muted-foreground leading-[1.75]">
+                    {c}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </CaseSection>
+        )}
 
         {/* Process */}
         <CaseSection label="Process" delay={0.05}>
@@ -1149,11 +1279,13 @@ function ProjectDetail() {
         </CaseSection>
 
         {/* What I Learned */}
-        <CaseSection label="What I Learned" delay={0.05}>
-          <p className="font-['Geist'] font-light text-base text-muted-foreground leading-[1.85]">
-            {project.learned}
-          </p>
-        </CaseSection>
+        {project.learned && (
+          <CaseSection label="What I Learned" delay={0.05}>
+            <p className="font-['Geist'] font-light text-base text-muted-foreground leading-[1.85]">
+              {project.learned}
+            </p>
+          </CaseSection>
+        )}
 
         {/* Prev / Next */}
         <div className="border-t border-border mt-20 pt-10 grid grid-cols-2 gap-4">
